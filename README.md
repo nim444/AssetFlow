@@ -16,7 +16,7 @@ Track what you have, what it's worth, where to sell it, and how the sale went.
 ## Features
 
 <details>
-<summary>📦 Item Management</summary>
+<summary>Item Management</summary>
 
 - Track items with name, description, owner type (personal / company), and asset classification
 - Set functional status: working, not working, or unknown
@@ -27,7 +27,7 @@ Track what you have, what it's worth, where to sell it, and how the sale went.
 </details>
 
 <details>
-<summary>💰 Pricing & Tax</summary>
+<summary>Pricing & Tax</summary>
 
 - Record the original cost (`sum_price`) and current estimated value (`estimated_price`)
 - TVA (VAT) tracking flag per item
@@ -36,7 +36,7 @@ Track what you have, what it's worth, where to sell it, and how the sale went.
 </details>
 
 <details>
-<summary>🖼️ Image Support</summary>
+<summary>Image Support</summary>
 
 - Attach multiple images per item
 - Inline 75×75px thumbnail previews in the admin list view
@@ -45,7 +45,7 @@ Track what you have, what it's worth, where to sell it, and how the sale went.
 </details>
 
 <details>
-<summary>🛡️ Validation</summary>
+<summary>Validation</summary>
 
 - An item cannot be marked as **Sold** without a sale history record
 - `full_clean()` called on every admin save to enforce model-level validation
