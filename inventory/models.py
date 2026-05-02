@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from multiselectfield import MultiSelectField
 
 
 class Item(models.Model):
@@ -53,8 +54,7 @@ class Item(models.Model):
     estimated_price = models.DecimalField(max_digits=10, decimal_places=2, help_text="Current market value")
 
     # Sales
-    sales_platform = models.CharField(
-        max_length=20,
+    sales_platform = MultiSelectField(
         choices=SALES_PLATFORM_CHOICES,
         blank=True,
         null=True,

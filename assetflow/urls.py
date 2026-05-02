@@ -19,6 +19,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
+admin.site.site_header = "AssetFlow"
+admin.site.site_title = "AssetFlow"
+admin.site.index_title = "AssetFlow Administration"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
