@@ -1,0 +1,44 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<div id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></div>
+{% if user.is_anonymous %}
+  {% include "admin/color_theme_toggle.html" %}
+{% endif %}
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+  /* Light mode */
+  html[data-theme="light"],
+  :root {
+    --primary: #5a5a5a;
+    --secondary: #3a3a3a;
+    --breadcrumbs-bg: #2c2c2c;
+    --button-hover-bg: #222222;
+    --default-button-bg: #222222;
+    --default-button-hover-bg: #3a3a3a;
+    --link-selected-fg: #3a3a3a;
+    --font-family-primary: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  }
+
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary: #3a3a3a;
+      --breadcrumbs-bg: #2c2c2c;
+    }
+  }
+
+  html[data-theme="dark"] {
+    --primary: #3a3a3a;
+    --breadcrumbs-bg: #2c2c2c;
+  }
+</style>
+{% endblock %}
